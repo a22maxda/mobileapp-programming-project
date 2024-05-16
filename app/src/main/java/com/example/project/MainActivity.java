@@ -2,6 +2,8 @@ package com.example.project;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -33,8 +35,6 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
         new JsonFile(this, this).execute(JSON_FILE);
 
-        items.add(new JsonItems("aa", "bb", "cc", "dd"));
-
         RecyclerView recView = findViewById(R.id.ItemList);
         RecyclerViewHolder adapter = new RecyclerViewHolder(this, items);
         recView.setLayoutManager(new LinearLayoutManager(this));
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
     @Override
     public void onPostExecute(String json) {
-        Log.d("onPostExecute", "" + json);
+        Log.d("onPostExecute", json);
         Type type = new TypeToken<List<JsonItems>>() {}.getType();
         items = gson.fromJson(json, type);
     }
