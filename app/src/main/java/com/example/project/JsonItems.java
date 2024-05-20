@@ -21,8 +21,17 @@ public class JsonItems {
         this.cost = cost;
     }
 
-    @Override
-    public String toString(){
-        return ID + ", " + name + ", " + type + ", " + company + ", " + location + ", " + category + ", " + size + ", " + cost + ", " + "\n";
+
+
+    public String toStringName(){
+        return name + "\n";
+    }
+
+    public String toStringID(){
+        return ID + "\n";
+    }
+
+    public String toStringLocation(){
+        return location + "\n";
     }
 }

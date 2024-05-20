@@ -31,7 +31,9 @@ public class RecyclerViewHolder extends RecyclerView.Adapter<RecyclerViewHolder.
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.getTextView().setText(items.get(position).toString());
+        holder.getTextViewName().setText(items.get(position).toStringName());
+        holder.getTextViewID().setText(items.get(position).toStringID());
+        holder.getTextViewLocation().setText(items.get(position).toStringLocation());
     }
 
     @Override
@@ -40,17 +42,28 @@ public class RecyclerViewHolder extends RecyclerView.Adapter<RecyclerViewHolder.
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
-        private final TextView textView;
-
+        private final TextView textViewName;
+        private final TextView textViewID;
+        private final TextView textViewLocation;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            textView = (TextView) itemView.findViewById(R.id.RecyclerViewItemName);
+            textViewName = itemView.findViewById(R.id.RecyclerViewItemName);
+            textViewID = itemView.findViewById(R.id.RecyclerViewItemID);
+            textViewLocation = itemView.findViewById(R.id.RecyclerViewItemLocation);
         }
 
-        public TextView getTextView() {
-                  return textView;
+        public TextView getTextViewName() {
+            return textViewName;
+        }
+
+        public TextView getTextViewID() {
+            return textViewID;
+        }
+
+        public TextView getTextViewLocation() {
+            return textViewLocation;
         }
     }
 }
