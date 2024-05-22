@@ -21,17 +21,23 @@ public class JsonItems {
         this.cost = cost;
     }
 
-
-
-    public String toStringName(){
-        return name + "\n";
+    public String toStringID(){
+        return ID;
     }
 
-    public String toStringID(){
-        return ID + "\n";
+    public String toStringName(){
+        return name;
     }
 
     public String toStringLocation(){
-        return location + "\n";
+        return location;
+    }
+
+    public int toStringSize(){
+        return size;
+    }
+
+    public int toStringCost(){
+        return cost;
     }
 }
