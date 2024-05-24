@@ -15,6 +15,37 @@ _Du kan ta bort all text som finns sedan tidigare_.
 
 Programkod ska se ut som exemplet nedan. Koden måste vara korrekt indenterad då den blir lättare att läsa vilket gör det lättare att hitta syntaktiska fel.
 
+Denna uppgift löstes genom att först skapa aktiviterna för recycleriewitem och about skärmen,
+samt att lägga till stöd för JSON genom GSON biblioteket.
+JSON_URL ger inget resultat så en JSON_FILE används istället, detta är ej optimalt då det inte går att
+lägga till ny data direkt från nätet om en fil används.
+
+```
+    private final String JSON_URL = "https://mobprog.webug.se/json-api?login=a22maxda";
+    private final String JSON_FILE = "json-api.json";
+```
+
+JsonItem klassen innehåller information från JSON filen, med variabler, en konstruktor och toString funktioner
+
+```
+private String name;
+public JsonItems(name){
+    this.name = name
+}
+public String toStringName(){
+    return name;
+}
+```
+
+Sedan skapades en textfil som används i about skärmen för att skriva ut text, samt att ändringar gjordes i  filerna för main och about aktiviteterna.
+En kortvy skapades som separerar de olika JSON objekten från varandra, dessa kort kan även skriva ut flera attributer genom att använda sig av ett flertal TextViews.
+
+Efter detta har mest buggfixning gjorts, ett problem uppstod där recyclerview gick utanför skärmen, detta löstes genom att ändra recyclerview höjden
+från wrap_content till 0dp i activity_main.xml.
+
+Variabelnamn i JsonItems har även ändrats för att bättre reflektera vad det är för variabler.
+JSON filen har även bytts ut från en placeholder fil som användes för testning till den riktiga filen som innehåller rätt värden.
+
 ```
 function errorCallback(error) {
     switch(error.code) {
@@ -33,7 +64,8 @@ function errorCallback(error) {
 
 Bilder läggs i samma mapp som markdown-filen.
 
-![](android.png)
+![](Home-Screen.png)
+![](About-Screen.png)
 
 Läs gärna:
 
