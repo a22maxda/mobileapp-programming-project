@@ -2,16 +2,13 @@ package com.example.project;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.net.URI;
 import java.util.ArrayList;
 
 public class RecyclerViewHolder extends RecyclerView.Adapter<RecyclerViewHolder.ViewHolder>{
@@ -35,11 +32,12 @@ public class RecyclerViewHolder extends RecyclerView.Adapter<RecyclerViewHolder.
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.getTextViewID().setText(items.get(position).toStringID());
+        holder.getTextViewID().setText("ID: " + items.get(position).toStringID());
         holder.getTextViewName().setText(items.get(position).toStringName());
-        holder.getTextViewLocation().setText(items.get(position).toStringLocation());
-        holder.getTextViewSize().setText("size: " + items.get(position).toStringSize());
-        holder.getTextViewCost().setText("cost: " + items.get(position).toStringCost());
+        holder.getTextViewLogin().setText(items.get(position).toStringLogin());
+        holder.getTextViewLocation().setText("Location: " + items.get(position).toStringLocation());
+        holder.getTextViewSize().setText("Area: " + items.get(position).toStringSize() + "km²");
+        holder.getTextViewCost().setText("Volume: " + items.get(position).toStringCost() + "km³");
     }
 
     @Override
@@ -53,6 +51,8 @@ public class RecyclerViewHolder extends RecyclerView.Adapter<RecyclerViewHolder.
 
         private final TextView textViewName;
 
+        private final TextView textViewLogin;
+
         private final TextView textViewLocation;
 
         private final TextView textViewSize;
@@ -64,9 +64,10 @@ public class RecyclerViewHolder extends RecyclerView.Adapter<RecyclerViewHolder.
 
             textViewID = itemView.findViewById(R.id.RecyclerViewItemID);
             textViewName = itemView.findViewById(R.id.RecyclerViewItemName);
+            textViewLogin = itemView.findViewById(R.id.RecyclerViewItemLogin);
             textViewLocation = itemView.findViewById(R.id.RecyclerViewItemLocation);
-            textViewSize = itemView.findViewById(R.id.RecyclerViewItemSize);
-            textViewCost = itemView.findViewById(R.id.RecyclerViewItemCost);
+            textViewSize = itemView.findViewById(R.id.RecyclerViewItemArea);
+            textViewCost = itemView.findViewById(R.id.RecyclerViewItemVolume);
         }
 
         public TextView getTextViewID() {
@@ -75,6 +76,10 @@ public class RecyclerViewHolder extends RecyclerView.Adapter<RecyclerViewHolder.
 
         public TextView getTextViewName() {
             return textViewName;
+        }
+
+        public TextView getTextViewLogin(){
+            return textViewLogin;
         }
 
         public TextView getTextViewLocation() {

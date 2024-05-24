@@ -1,3 +1,8 @@
-*PLACEHOLDER*
-this is the about page for the WebDev project assignment, the idea is to explain what the JSON is trying to achieve
-*PLACEHOLDER*
+
+
+"Lakes" is an app which makes it easy to access information about different lakes around the world.
+
+The app is meant for people who are interested in nature it provides easy access to relevant information several lakes.
+
+The app is forked from "https://github.com/LenaSYS/mobileapp-programming-project" and further developed by:
+Maximilian Dahlquist, a22maxda

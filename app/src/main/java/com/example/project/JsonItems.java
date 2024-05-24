@@ -1,24 +1,30 @@
 package com.example.project;
 
+import com.google.gson.annotations.SerializedName;
+
 public class JsonItems {
     private String ID;
     private String name;
-    private String type;
+    @SerializedName("type")
+    private String login;
+
     private String company;
     private String location;
     private String category;
-    private int size;
-    private int cost;
+    @SerializedName("size")
+    private int area;
+    @SerializedName("cost")
+    private int volume;
 
-    public JsonItems(String ID, String name, String type, String company, String location, String category, int size, int cost){
+    public JsonItems(String ID, String name, String login, String company, String location, String category, int area, int volume){
         this.ID = ID;
         this.name = name;
-        this.type = type;
+        this.login = login;
         this.company = company;
         this.location = location;
         this.category = category;
-        this.size = size;
-        this.cost = cost;
+        this.area = area;
+        this.volume = volume;
     }
 
     public String toStringID(){
@@ -29,15 +35,19 @@ public class JsonItems {
         return name;
     }
 
+    public String toStringLogin(){
+        return login;
+    }
+
     public String toStringLocation(){
         return location;
     }
 
     public int toStringSize(){
-        return size;
+        return area;
     }
 
     public int toStringCost(){
-        return cost;
+        return volume;
     }
 }
