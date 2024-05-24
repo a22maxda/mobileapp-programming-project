@@ -25,7 +25,7 @@ lägga till ny data direkt från nätet om en fil används.
     private final String JSON_FILE = "json-api.json";
 ```
 
-JsonItem klassen innehåller information från JSON filen, med variabler, en konstruktor och toString funktioner
+JsonItem klassen innehåller information från JSON filen, med variabler, en konstruktor och ett antal toString funktioner
 
 ```
 private String name;
