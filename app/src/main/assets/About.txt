@@ -1,9 +1,5 @@
+Hjälpapp för BraedSpelas spellokaler
 
+Hitta enkelt vilka spel som är öppna och var de är
 
-"Lakes" is an app which makes it easy to access information about different lakes around the world.
-
-The app is meant for people who are interested in nature as it provides easy access to relevant information several lakes.
-It is also meant for lake enthusiasts who may want a quick and easy way to see information.
-
-The app is forked from "https://github.com/LenaSYS/mobileapp-programming-project" and further developed by:
-Maximilian Dahlquist, a22maxda
+Lägg till ditt eget spel om du inte hittar något intressant

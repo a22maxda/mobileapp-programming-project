@@ -3,12 +3,12 @@ package com.example.project;
 import com.google.gson.annotations.SerializedName;
 
 public class JsonItems {
-    private String ID;
+    @SerializedName("ID")
+    private String time;
     private String name;
-    @SerializedName("type")
     private String login;
-
-    private String company;
+    @SerializedName("company")
+    private String players;
     private String location;
     private String category;
     @SerializedName("size")
@@ -16,38 +16,31 @@ public class JsonItems {
     @SerializedName("cost")
     private int volume;
 
-    public JsonItems(String ID, String name, String login, String company, String location, String category, int area, int volume){
-        this.ID = ID;
+    public JsonItems(String time, String name, String login, String players, String location, String category, int area, int volume){
+        this.time = time;
         this.name = name;
         this.login = login;
-        this.company = company;
+        this.players = players;
         this.location = location;
         this.category = category;
         this.area = area;
         this.volume = volume;
     }
 
-    public String toStringID(){
-        return ID;
+    public String toStringTime(){
+        return time;
     }
 
     public String toStringName(){
         return name;
     }
 
-    public String toStringLogin(){
-        return login;
+    public String toStringPlayers(){
+        return players;
     }
 
     public String toStringLocation(){
         return location;
     }
-
-    public int toStringSize(){
-        return area;
-    }
-
-    public int toStringCost(){
-        return volume;
-    }
 }
+

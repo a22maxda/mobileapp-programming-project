@@ -32,12 +32,10 @@ public class RecyclerViewHolder extends RecyclerView.Adapter<RecyclerViewHolder.
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.getTextViewID().setText("ID: " + items.get(position).toStringID());
+        holder.getTextViewTime().setText("Tid: " + items.get(position).toStringTime());
         holder.getTextViewName().setText(items.get(position).toStringName());
-        holder.getTextViewLogin().setText(items.get(position).toStringLogin());
-        holder.getTextViewLocation().setText("Location: " + items.get(position).toStringLocation());
-        holder.getTextViewSize().setText("Area: " + items.get(position).toStringSize() + "km²");
-        holder.getTextViewCost().setText("Volume: " + items.get(position).toStringCost() + "km³");
+        holder.getTextViewLocation().setText("Plats: " + items.get(position).toStringLocation());
+        holder.getTextViewPlayers().setText("Spelare: " + items.get(position).toStringPlayers());
     }
 
     @Override
@@ -47,51 +45,37 @@ public class RecyclerViewHolder extends RecyclerView.Adapter<RecyclerViewHolder.
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
-        private final TextView textViewID;
+        private final TextView textViewTime;
 
         private final TextView textViewName;
 
-        private final TextView textViewLogin;
-
         private final TextView textViewLocation;
 
-        private final TextView textViewSize;
-
-        private final TextView textViewCost;
+        private final TextView textViewPlayers;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            textViewID = itemView.findViewById(R.id.RecyclerViewItemID);
-            textViewName = itemView.findViewById(R.id.RecyclerViewItemName);
-            textViewLogin = itemView.findViewById(R.id.RecyclerViewItemLogin);
-            textViewLocation = itemView.findViewById(R.id.RecyclerViewItemLocation);
-            textViewSize = itemView.findViewById(R.id.RecyclerViewItemArea);
-            textViewCost = itemView.findViewById(R.id.RecyclerViewItemVolume);
+            textViewTime = itemView.findViewById(R.id.RVITime);
+            textViewName = itemView.findViewById(R.id.RVIName);
+            textViewLocation = itemView.findViewById(R.id.RVILocation);
+            textViewPlayers = itemView.findViewById(R.id.RVIPlayers);
         }
 
-        public TextView getTextViewID() {
-            return textViewID;
+        public TextView getTextViewTime() {
+            return textViewTime;
         }
 
         public TextView getTextViewName() {
             return textViewName;
         }
 
-        public TextView getTextViewLogin(){
-            return textViewLogin;
-        }
-
         public TextView getTextViewLocation() {
             return textViewLocation;
         }
 
-        public TextView getTextViewSize(){
-            return textViewSize;
-        }
-
-        public TextView getTextViewCost(){
-            return textViewCost;
+        public TextView getTextViewPlayers(){
+            return textViewPlayers;
         }
     }
 }
